@@ -18,7 +18,7 @@ loaders:
   image:
     _target_: serotiny.io.dataframe.loaders.LoadImage
     column: max_projection_z
-    select_channels: ['dna','bf',']  
+    select_channels: ['dna']  
     dtype: float32
     unsqueeze_first_dim: True #set this to true when you have only one select_channel, and to false when you have multiple channels
     transform:
