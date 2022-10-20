@@ -22,8 +22,9 @@ loaders:
     dtype: float32
     unsqueeze_first_dim: False #set this to true when you have only one select_channel, and to false when you have multiple channels
     transform:
-      _partial_: true
-      _target_: cytodata_aics.io_utils.rescale_image
-      channels: ['bf','dna','membrane']
+      - _partial_: true
+        _target_: cytodata_aics.io_utils.rescale_image
+        channels: ['bf','dna','membrane']
+      - _target_: monai.transforms.GaussianSharpen
     
 split_column: "split"
